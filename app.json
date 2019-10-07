@@ -1,0 +1,40 @@
+{
+  "id": "b30fb8dc-66ed-40fb-a38e-e678c235e7c5",
+  "name": "Migrated BC Objects",
+  "publisher": "MPower Softcomm",
+  "brief": "Corrugation Specific Module",
+  "description": "Corrugation Specific Module",
+  "version": "1.0.0.0",
+  "privacyStatement": "http://www.mpowersoft.com/",
+  "EULA": "",
+  "help": "http://www.mpowersoft.com/",
+  "url": "",
+  "logo": "./mpower.png",
+  "capabilities": [],
+  "dependencies": [
+    {
+      "appId": "7cbf3de4-9fa1-4501-ad36-db82fc010190",
+      "name": "HRPAYROLL",
+      "publisher": "MPower Softcomm",
+      "version": "1.0.0.0"
+    },
+    {
+      "appId": "998082d8-0da0-422f-a034-0606de026495",
+      "name": "PLM",
+      "publisher": "B2B Addon",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "showMyCode": true,
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50000,
+    "to": 33005000
+  
+  },
+  "runtime": "2.2",
+  "target":"Internal"
+
+}

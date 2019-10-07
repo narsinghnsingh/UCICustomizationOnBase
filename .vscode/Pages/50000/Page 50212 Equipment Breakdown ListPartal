@@ -1,0 +1,61 @@
+page 50212 "Equipment Breakdown ListPart"
+{
+    // version B2BPLM1.00.00
+
+    // B2B Software Technologies
+    // -----------------------------------------
+    // Project : Plant Maintenance Addon
+    // B2BPLM1.00.00
+    // No. Sign          Dev     Date            Description
+    // --------------------------------------------------------------------------
+    // 01  B2BPLM1.00.00     RO   11-20-10  New Form.
+
+    CaptionML = ENU = 'Equipment Breakdown';
+    CardPageID = "View Job Cards";
+    Editable = false;
+    PageType = ListPart;
+    SourceTable = "PM Job Header";
+
+    layout
+    {
+        area(content)
+        {
+            repeater(Control1102154000)
+            {
+                ShowCaption = false;
+                field("No.";"No.")
+                {
+                }
+                field("Machine ID";"Machine ID")
+                {
+                }
+                field("Machine Name";"Machine Name")
+                {
+                }
+                field(Type;Type)
+                {
+                }
+                field("Expected Resource Cost";"Expected Resource Cost")
+                {
+                }
+                field("Expected Spares Cost";"Expected Spares Cost")
+                {
+                }
+                field("Actual Resource Cost";"Actual Resource Cost")
+                {
+                }
+                field("Actual Spares Cost";"Actual Spares Cost")
+                {
+                }
+                field("Total Cost";"Total Cost")
+                {
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+}
+

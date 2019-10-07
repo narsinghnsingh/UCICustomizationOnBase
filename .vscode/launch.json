@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "localhost",
+            "server": "http://localhost",
+            "serverInstance": "BC130_LivePub",
+            "authentication": "Windows",
+            "startupObjectId": 9307,
+            "startupObjectType": "Page",
+            "port": 8049,
+            "breakOnError": true,
+            "schemaUpdateMode": "Synchronize"
+            
+        }
+    ]
+}

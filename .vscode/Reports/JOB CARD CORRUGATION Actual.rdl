@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="EstimateCode_ProdOrderLine">
+          <DataField>EstimateCode_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="ProdOrderNo_ProdOrderLine">
+          <DataField>ProdOrderNo_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="ItemNo_ProdOrderLine">
+          <DataField>ItemNo_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="Description_ProdOrderLine">
+          <DataField>Description_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="Quantity_ProdOrderLine">
+          <DataField>Quantity_ProdOrderLine</DataField>
+        </Field>
+        <Field Name="Quantity_ProdOrderLineFormat">
+          <DataField>Quantity_ProdOrderLineFormat</DataField>
+        </Field>
+        <Field Name="Description2">
+          <DataField>Description2</DataField>
+        </Field>
+        <Field Name="ODID">
+          <DataField>ODID</DataField>
+        </Field>
+        <Field Name="Topcolor">
+          <DataField>Topcolor</DataField>
+        </Field>
+        <Field Name="LinearQty">
+          <DataField>LinearQty</DataField>
+        </Field>
+        <Field Name="LinearQtyFormat">
+          <DataField>LinearQtyFormat</DataField>
+        </Field>
+        <Field Name="SPECIALCORRUGATION">
+          <DataField>SPECIALCORRUGATION</DataField>
+        </Field>
+        <Field Name="EXTNO">
+          <DataField>EXTNO</DataField>
+        </Field>
+        <Field Name="SubJobNo">
+          <DataField>SubJobNo</DataField>
+        </Field>
+        <Field Name="CUSTNO">
+          <DataField>CUSTNO</DataField>
+        </Field>
+        <Field Name="CUSTNAME">
+          <DataField>CUSTNAME</DataField>
+        </Field>
+        <Field Name="TotalNetWeight">
+          <DataField>TotalNetWeight</DataField>
+        </Field>
+        <Field Name="TotalNetWeightFormat">
+          <DataField>TotalNetWeightFormat</DataField>
+        </Field>
+        <Field Name="BoxUnitWeight">
+          <DataField>BoxUnitWeight</DataField>
+        </Field>
+        <Field Name="BoxUnitWeightFormat">
+          <DataField>BoxUnitWeightFormat</DataField>
+        </Field>
+        <Field Name="CUSTADD">
+          <DataField>CUSTADD</DataField>
+        </Field>
+        <Field Name="CUSTADD1">
+          <DataField>CUSTADD1</DataField>
+        </Field>
+        <Field Name="CUSTCITY">
+          <DataField>CUSTCITY</DataField>
+        </Field>
+        <Field Name="EXPECTEDDELDATE">
+          <DataField>EXPECTEDDELDATE</DataField>
+        </Field>
+        <Field Name="SHIP_TO_POSTCODE">
+          <DataField>SHIP_TO_POSTCODE</DataField>
+        </Field>
+        <Field Name="ORDERDATE">
+          <DataField>ORDERDATE</DataField>
+        </Field>
+        <Field Name="DELIVERY_PLACE">
+          <DataField>DELIVERY_PLACE</DataField>
+        </Field>
+        <Field Name="SALESPERSONNAME">
+          <DataField>SALESPERSONNAME</DataField>
+        </Field>
+        <Field Name="CUSTCONTACTNO">
+          <DataField>CUSTCONTACTNO</DataField>
+        </Field>
+        <Field Name="BoxSize1">
+          <DataField>BoxSize1</DataField>
+        </Field>
+        <Field Name="JobModified">
+          <DataField>JobModified</DataField>
+        </Field>
+        <Field Name="CreationDate_ProductionOrder">
+          <DataField>CreationDate_ProductionOrder</DataField>
+        </Field>
+        <Field Name="Boardupint">
+          <DataField>Boardupint</DataField>
+        </Field>
+        <Field Name="Repeatjob">
+          <DataField>Repeatjob</DataField>
+        </Field>
+        <Field Name="FGDescription">
+          <DataField>FGDescription</DataField>
+        </Field>
+        <Field Name="Modifiedjob">
+          <DataField>Modifiedjob</DataField>
+        </Field>
+        <Field Name="RepeatJobNo">
+          <DataField>RepeatJobNo</DataField>
+        </Field>
+        <Field Name="FG_GSM">
+          <DataField>FG_GSM</DataField>
+        </Field>
+        <Field Name="PlateItem">
+          <DataField>PlateItem</DataField>
+        </Field>
+        <Field Name="PaperDeckleSize">
+          <DataField>PaperDeckleSize</DataField>
+        </Field>
+        <Field Name="PaperDeckleSizeFormat">
+          <DataField>PaperDeckleSizeFormat</DataField>
+        </Field>
+        <Field Name="DieNumber">
+          <DataField>DieNumber</DataField>
+        </Field>
+        <Field Name="NOOFPLY">
+          <DataField>NOOFPLY</DataField>
+        </Field>
+        <Field Name="TotalTrim">
+          <DataField>TotalTrim</DataField>
+        </Field>
+        <Field Name="BOARD_SIZE">
+          <DataField>BOARD_SIZE</DataField>
+        </Field>
+        <Field Name="BOARD_UPS">
+          <DataField>BOARD_UPS</DataField>
+        </Field>
+        <Field Name="DeckleUtilize">
+          <DataField>DeckleUtilize</DataField>
+        </Field>
+        <Field Name="DeckleUtilizeFormat">
+          <DataField>DeckleUtilizeFormat</DataField>
+        </Field>
+        <Field Name="FLUTE_TYPE">
+          <DataField>FLUTE_TYPE</DataField>
+        </Field>
+        <Field Name="BoardLength">
+          <DataField>BoardLength</DataField>
+        </Field>
+        <Field Name="BoardLengthFormat">
+          <DataField>BoardLengthFormat</DataField>
+        </Field>
+        <Field Name="BoardWidth">
+          <DataField>BoardWidth</DataField>
+        </Field>
+        <Field Name="BoardWidthFormat">
+          <DataField>BoardWidthFormat</DataField>
+        </Field>
+        <Field Name="ROLL_WIDTH">
+          <DataField>ROLL_WIDTH</DataField>
+        </Field>
+        <Field Name="ROLL_WIDTHFormat">
+          <DataField>ROLL_WIDTHFormat</DataField>
+        </Field>
+        <Field Name="NOOFCOLORS">
+          <DataField>NOOFCOLORS</DataField>
+        </Field>
+        <Field Name="Score1">
+          <DataField>Score1</DataField>
+        </Field>
+        <Field Name="Score2">
+          <DataField>Score2</DataField>
+        </Field>
+        <Field Name="Score2Format">
+          <DataField>Score2Format</DataField>
+        </Field>
+        <Field Name="Score3">
+          <DataField>Score3</DataField>
+        </Field>
+        <Field Name="Score3Format">
+          <DataField>Score3Format</DataField>
+        </Field>
+        <Field Name="Score4">
+          <DataField>Score4</DataField>
+        </Field>
+        <Field Name="Score4Format">
+          <DataField>Score4Format</DataField>
+        </Field>
+        <Field Name="Score5">
+          <DataField>Score5</DataField>
+        </Field>
+        <Field Name="Score5Format">
+          <DataField>Score5Format</DataField>
+        </Field>
+        <Field Name="Scoretyp">
+          <DataField>Scoretyp</DataField>
+        </Field>
+        <Field Name="OrdeHeaderQty">
+          <DataField>OrdeHeaderQty</DataField>
+        </Field>
+        <Field Name="OrdeHeaderQtyFormat">
+          <DataField>OrdeHeaderQtyFormat</DataField>
+        </Field>
+        <Field Name="DIE_NOS">
+          <DataField>DIE_NOS</DataField>
+        </Field>
+        <Field Name="NOOFDIE_UPS">
+          <DataField>NOOFDIE_UPS</DataField>
+        </Field>
+        <Field Name="ARTXT1">
+          <DataField>ARTXT1</DataField>
+        </Field>
+        <Field Name="PROFTXT1">
+          <DataField>PROFTXT1</DataField>
+        </Field>
+        <Field Name="CLNTTXT1">
+          <DataField>CLNTTXT1</DataField>
+        </Field>
+        <Field Name="PRNTTXT1">
+          <DataField>PRNTTXT1</DataField>
+        </Field>
+        <Field Name="STITXT1">
+          <DataField>STITXT1</DataField>
+        </Field>
+        <Field Name="GLUTXT1">
+          <DataField>GLUTXT1</DataField>
+        </Field>
+        <Field Name="DIETXT1">
+          <DataField>DIETXT1</DataField>
+        </Field>
+        <Field Name="LAMTXT1">
+          <DataField>LAMTXT1</DataField>
+        </Field>
+        <Field Name="BOX_SIZE">
+          <DataField>BOX_SIZE</DataField>
+        </Field>
+        <Field Name="EstimateType_ProdOrderComponent">
+          <DataField>EstimateType_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="PaperPosition_ProdOrderComponent">
+          <DataField>PaperPosition_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="ItemCategoryCode_ProdOrderComponent">
+          <DataField>ItemCategoryCode_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="ItemNo_ProdOrderComponent">
+          <DataField>ItemNo_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="Description_ProdOrderComponent">
+          <DataField>Description_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="Quantity_ProdOrderComponent">
+          <DataField>Quantity_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="Quantity_ProdOrderComponentFormat">
+          <DataField>Quantity_ProdOrderComponentFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCode_ProdOrderComponent">
+          <DataField>UnitofMeasureCode_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="Quantityper_ProdOrderComponent">
+          <DataField>Quantityper_ProdOrderComponent</DataField>
+        </Field>
+        <Field Name="Quantityper_ProdOrderComponentFormat">
+          <DataField>Quantityper_ProdOrderComponentFormat</DataField>
+        </Field>
+        <Field Name="ITME_DECSIZE">
+          <DataField>ITME_DECSIZE</DataField>
+        </Field>
+        <Field Name="FSCCategory">
+          <DataField>FSCCategory</DataField>
+        </Field>
+        <Field Name="CustomerGSM">
+          <DataField>CustomerGSM</DataField>
+        </Field>
+        <Field Name="CustomerGSMFormat">
+          <DataField>CustomerGSMFormat</DataField>
+        </Field>
+        <Field Name="Takeupfactor">
+          <DataField>Takeupfactor</DataField>
+        </Field>
+        <Field Name="TakeupfactorFormat">
+          <DataField>TakeupfactorFormat</DataField>
+        </Field>
+        <Field Name="ITEM_GSM1">
+          <DataField>ITEM_GSM1</DataField>
+        </Field>
+        <Field Name="ITEM_GSM1Format">
+          <DataField>ITEM_GSM1Format</DataField>
+        </Field>
+        <Field Name="POCompCost">
+          <DataField>POCompCost</DataField>
+        </Field>
+        <Field Name="POCompCostFormat">
+          <DataField>POCompCostFormat</DataField>
+        </Field>
+        <Field Name="Category_EstimateSpecialDescription">
+          <DataField>Category_EstimateSpecialDescription</DataField>
+        </Field>
+        <Field Name="Comment_EstimateSpecialDescription">
+          <DataField>Comment_EstimateSpecialDescription</DataField>
+        </Field>
+        <Field Name="categary">
+          <DataField>categary</DataField>
+        </Field>
+        <Field Name="ItemNo_ItemLedgerEntry">
+          <DataField>ItemNo_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="PaperPosition_ItemLedgerEntry">
+          <DataField>PaperPosition_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="Description_ItemLedgerEntry">
+          <DataField>Description_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="TakeUp_ItemLedgerEntry">
+          <DataField>TakeUp_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="TakeUp_ItemLedgerEntryFormat">
+          <DataField>TakeUp_ItemLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="ILEFSCCategory">
+          <DataField>ILEFSCCategory</DataField>
+        </Field>
+        <Field Name="FluteType_ItemLedgerEntry">
+          <DataField>FluteType_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="ILEGSM1">
+          <DataField>ILEGSM1</DataField>
+        </Field>
+        <Field Name="ILEGSM1Format">
+          <DataField>ILEGSM1Format</DataField>
+        </Field>
+        <Field Name="Quantity_ItemLedgerEntry">
+          <DataField>Quantity_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="Quantity_ItemLedgerEntryFormat">
+          <DataField>Quantity_ItemLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="CostAmountActual_ItemLedgerEntry">
+          <DataField>CostAmountActual_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="CostAmountActual_ItemLedgerEntryFormat">
+          <DataField>CostAmountActual_ItemLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="TotalILEGSM">
+          <DataField>TotalILEGSM</DataField>
+        </Field>
+        <Field Name="TotalILEGSMFormat">
+          <DataField>TotalILEGSMFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

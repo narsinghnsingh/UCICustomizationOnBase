@@ -1,0 +1,51 @@
+tableextension 50072 Ext_Resource extends Resource
+{
+    fields
+    {
+        field(63000; Designation; Code[20])
+        {
+            Description = 'SMY1.0';
+            TableRelation = Designation;
+        }
+        field(63001; "Skill Type"; Option)
+        {
+            Description = 'SMY1.0';
+            OptionCaption = ' ,All,Specific';
+            OptionMembers = " ",All,Specific;
+
+            trigger OnValidate()
+            begin
+                CheckSpecificSkills;
+            end;
+        }
+    }
+
+    var
+        WorkSheet: Record "Work Sheet";
+
+    procedure CheckSpecificSkills()
+    var
+        ResourceSkill: Record "PM Resource Skill";
+    begin
+        ResourceSkill.SetRange(Type, ResourceSkill.Type::Resource);
+        ResourceSkill.SetRange("No.", "No.");
+        if ResourceSkill.FindFirst and (not (("Skill Type" = "Skill Type"::Specific) and (Type = Type::Person))) then
+            Error('One or more Specific skills are exists.');
+    end;
+
+    procedure CheckTypeSkills()
+    begin
+        if not (("Skill Type" = "Skill Type"::Specific) and (Type = Type::Person)) then
+            Error('Skill type must be Specific and Type must be Person');
+    end;
+
+    procedure AssignedJob() JobNo: Code[20]
+    begin
+        WorkSheet.Reset;
+        WorkSheet.SetRange("I/R Code", "No.");
+        WorkSheet.SetRange(Posted, false);
+        if WorkSheet.FindFirst and (Type = Type::Person) then
+            exit(WorkSheet."Job Card No.");
+    end;
+
+}

@@ -1,0 +1,57 @@
+report 50102 "Update Imported Data"
+{
+    ProcessingOnly = true;
+
+    dataset
+    {
+        dataitem("Detailed Leave Records"; "Detailed Leave Records")
+        {
+            DataItemTableView = SORTING ("Entry No.") ORDER(Ascending) WHERE ("Imported Data" = FILTER (true));
+            RequestFilterFields = "Employee No.";
+
+            trigger OnAfterGetRecord()
+            begin
+                Window.Update(1, "Entry No.");
+                ProvisionalLeavesGRec.Reset;
+                ProvisionalLeavesGRec.SetRange("Employee No.", "Detailed Leave Records"."Employee No.");
+                ProvisionalLeavesGRec.SetRange("Leave Code", "Detailed Leave Records"."Leave Code");
+                if ProvisionalLeavesGRec.FindFirst then begin
+                    ProvisionalLeavesGRec.Validate("Remaining Leaves", (ProvisionalLeavesGRec."Remaining Leaves" + "Detailed Leave Records"."No. of Leaves"));
+                    ProvisionalLeavesGRec."Imported Leave Count" := "Detailed Leave Records"."No. of Leaves";
+                    ProvisionalLeavesGRec.Modify;
+                end;
+            end;
+
+            trigger OnPostDataItem()
+            begin
+                Window.Close();
+            end;
+
+            trigger OnPreDataItem()
+            begin
+                Window.Open('Entry No. #1##########');
+            end;
+        }
+    }
+
+    requestpage
+    {
+
+        layout
+        {
+        }
+
+        actions
+        {
+        }
+    }
+
+    labels
+    {
+    }
+
+    var
+        ProvisionalLeavesGRec: Record "Provisional Leaves";
+        Window: Dialog;
+}
+

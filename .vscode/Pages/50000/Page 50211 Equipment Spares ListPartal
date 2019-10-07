@@ -1,0 +1,58 @@
+page 50211 "Equipment Spares ListPart"
+{
+    // version B2BPLM1.00.00,B2B1.1
+
+    // B2B Software Technologies
+    // -----------------------------------------
+    // Project : Plant Maintenance Addon
+    // B2BPLM1.00.00
+    // No. Sign             USERID           Dev     Date            Description
+    // --------------------------------------------------------------------------
+    // 01  B2BPLM1.00.00                     RO   11-20-10            New Form.
+    // 02  B2B              Divya                 04-10-14            Deleted the fields slNo,Component ID,Component Name.
+    // 1.1 B2B              Vamshi                05-June-15        -> Changed Visible property of  "Part No.",Specifications,"Availablity Lead Time"  to FALSE.
+
+    CaptionML = ENU = 'Equipment Spares';
+    PageType = ListPart;
+    SourceTable = Spare;
+
+    layout
+    {
+        area(content)
+        {
+            repeater(Control1102154000)
+            {
+                ShowCaption = false;
+                field("Item ID";"Item ID")
+                {
+                }
+                field("Item Name";"Item Name")
+                {
+                }
+                field("Part No.";"Part No.")
+                {
+                    Visible = false;
+                }
+                field(Specifications;Specifications)
+                {
+                    Visible = false;
+                }
+                field("Availablity Lead Time";"Availablity Lead Time")
+                {
+                    Visible = false;
+                }
+                field(Inventory;Inventory)
+                {
+                }
+                field("Unit of Measure";"Unit of Measure")
+                {
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+}
+

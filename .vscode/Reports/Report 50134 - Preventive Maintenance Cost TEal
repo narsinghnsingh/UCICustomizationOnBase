@@ -1,0 +1,166 @@
+report 50134 "Preventive Maintenance Cost TE"
+{
+    // version B2BPLM1.00.00
+
+    // B2B Software Technologies
+    // -----------------------------------------
+    // Project : Plant Maintenance Addon
+    // B2BPLM1.00.00
+    // No. Sign          Dev     Date            Description
+    // --------------------------------------------------------------------------
+    // 01  B2BPLM1.00.00     RO   11-20-10  New Report.
+    DefaultLayout = RDLC;
+    RDLCLayout = '.vscode/Reports/Preventive Maintenance Cost TE.rdl';
+
+    Caption = 'Preventive Maintenace Cost';
+UsageCategory = ReportsAndAnalysis;
+ApplicationArea = All;
+
+    dataset
+    {
+        dataitem("PM Job Header"; "PM Job Header")
+        {
+            CalcFields = "Actual Resource Cost", "Actual Spares Cost";
+            DataItemTableView = SORTING ("Machine ID") WHERE (Type = CONST (PMR), Posted = CONST (true));
+            RequestFilterFields = "Machine ID";
+            column(PM_Job_Header_MachineID; "Machine ID")
+            {
+            }
+            column(MachineName_PMJobHeader; "PM Job Header"."Machine Name")
+            {
+            }
+            column(Preventive_Maintenance_Cost_Caption; Preventive_Maintenance_Cost_CaptionLbl)
+            {
+            }
+            column(PM_Job_Header_MachineIDCaption; FieldCaption("Machine ID"))
+            {
+            }
+            column(Machine_NameCaption; Machine_NameCaptionLbl)
+            {
+            }
+            column(Total_CostCaption; Total_CostCaptionLbl)
+            {
+            }
+            column(Actual_Resource_CostCaption; Actual_Resource_CostCaptionLbl)
+            {
+            }
+            column(Actual_Spares_CostCaption; Actual_Spares_CostCaptionLbl)
+            {
+            }
+            column(StatusCaption; StatusCaptionLbl)
+            {
+            }
+            column(End_dateCaption; End_dateCaptionLbl)
+            {
+            }
+            column(Start_dateCaption; Start_dateCaptionLbl)
+            {
+            }
+            column(TimeCaption; TimeCaptionLbl)
+            {
+            }
+            column(Inspection_TypeCaption; Inspection_TypeCaptionLbl)
+            {
+            }
+            column(FrequencyCaption; FrequencyCaptionLbl)
+            {
+            }
+            column(Job_card_NoCaption; Job_card_NoCaptionLbl)
+            {
+            }
+            column(PM_Job_Header_No_; "No.")
+            {
+            }
+            dataitem("PM Job Line"; "PM Job Line")
+            {
+                DataItemLink = "Job Header No." = FIELD ("No.");
+                column(PM_Job_Header___Actual_Resource_Cost_; "PM Job Header"."Actual Resource Cost")
+                {
+                }
+                column(PM_Job_Header___Actual_Spares_Cost_; "PM Job Header"."Actual Spares Cost")
+                {
+                }
+                column(Staus; Staus)
+                {
+                }
+                column(PM_Job_Header___Time_Duration_; "PM Job Header"."Time Duration")
+                {
+                }
+                column(PM_Job_Line__PM_Job_Line__InspTypeName; "PM Job Line"."Maintenace Type Name")
+                {
+                }
+                column(PM_Job_Header__FrequencyName; "PM Job Header"."Frequency Name")
+                {
+                }
+                column(PM_Job_Header___No__; "PM Job Header"."No.")
+                {
+                }
+                column(PM_Job_Header___Total_Cost_; "PM Job Header"."Total Cost")
+                {
+                }
+                column(PM_Job_Header___Created_Date_; "PM Job Header"."Created Date")
+                {
+                }
+                column(PM_Job_Header___Posted_Date_; "PM Job Header"."Posted Date")
+                {
+                }
+                column(PM_Job_Line_Job_Header_No_; "Job Header No.")
+                {
+                }
+                column(PM_Job_Line_Machine_ID; "Machine ID")
+                {
+                }
+                column(PM_Job_Line_Line_No_; "Line No.")
+                {
+                }
+            }
+
+            trigger OnAfterGetRecord()
+            begin
+                /*"PM Job Header".SETRANGE("Frequency Name",FrequencyNameLoc);
+                    IF "PM Job Header".Posted THEN
+                    Staus:=Staus::Closed
+                    ELSE
+                    Staus:=Staus::Open;
+                */
+
+            end;
+        }
+    }
+
+    requestpage
+    {
+
+        layout
+        {
+        }
+
+        actions
+        {
+        }
+    }
+
+    labels
+    {
+    }
+
+    var
+        Totalcost: Decimal;
+        PMJobLineLoc: Record "PM Job Line";
+        StDate: Date;
+        Staus: Option ,Closed,Open;
+        FrequencyNameLoc: Code[50];
+        Preventive_Maintenance_Cost_CaptionLbl: Label 'Preventive Maintenance Cost ';
+        Total_CostCaptionLbl: Label 'Total Cost';
+        Actual_Resource_CostCaptionLbl: Label 'Actual Resource Cost';
+        Actual_Spares_CostCaptionLbl: Label 'Actual Spares Cost';
+        StatusCaptionLbl: Label 'Status';
+        End_dateCaptionLbl: Label 'End date';
+        Start_dateCaptionLbl: Label 'Start date';
+        TimeCaptionLbl: Label 'Time';
+        Inspection_TypeCaptionLbl: Label 'Inspection Type';
+        FrequencyCaptionLbl: Label 'Frequency';
+        Job_card_NoCaptionLbl: Label 'Job card No';
+        Machine_NameCaptionLbl: Label 'Machine Name';
+}
+

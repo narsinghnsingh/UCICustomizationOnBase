@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="SysDate">
+          <DataField>SysDate</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="Job_no">
+          <DataField>Job_no</DataField>
+        </Field>
+        <Field Name="Doc_No">
+          <DataField>Doc_No</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Prod_Order_Qty">
+          <DataField>Prod_Order_Qty</DataField>
+        </Field>
+        <Field Name="Prod_Order_QtyFormat">
+          <DataField>Prod_Order_QtyFormat</DataField>
+        </Field>
+        <Field Name="MINDATE">
+          <DataField>MINDATE</DataField>
+        </Field>
+        <Field Name="MAXDATE">
+          <DataField>MAXDATE</DataField>
+        </Field>
+        <Field Name="ConsumptionQty">
+          <DataField>ConsumptionQty</DataField>
+        </Field>
+        <Field Name="ConsumptionQtyFormat">
+          <DataField>ConsumptionQtyFormat</DataField>
+        </Field>
+        <Field Name="QtyIssued">
+          <DataField>QtyIssued</DataField>
+        </Field>
+        <Field Name="QtyIssuedFormat">
+          <DataField>QtyIssuedFormat</DataField>
+        </Field>
+        <Field Name="RequisitionQty">
+          <DataField>RequisitionQty</DataField>
+        </Field>
+        <Field Name="RequisitionQtyFormat">
+          <DataField>RequisitionQtyFormat</DataField>
+        </Field>
+        <Field Name="ItemCatagoryCode">
+          <DataField>ItemCatagoryCode</DataField>
+        </Field>
+        <Field Name="REQ_NO">
+          <DataField>REQ_NO</DataField>
+        </Field>
+        <Field Name="RequisitionDate">
+          <DataField>RequisitionDate</DataField>
+        </Field>
+        <Field Name="OutPutQty">
+          <DataField>OutPutQty</DataField>
+        </Field>
+        <Field Name="OutPutQtyFormat">
+          <DataField>OutPutQtyFormat</DataField>
+        </Field>
+        <Field Name="NegativeReturnQty">
+          <DataField>NegativeReturnQty</DataField>
+        </Field>
+        <Field Name="NegativeReturnQtyFormat">
+          <DataField>NegativeReturnQtyFormat</DataField>
+        </Field>
+        <Field Name="totalNegative">
+          <DataField>totalNegative</DataField>
+        </Field>
+        <Field Name="totalNegativeFormat">
+          <DataField>totalNegativeFormat</DataField>
+        </Field>
+        <Field Name="Qty_On_Prod_order">
+          <DataField>Qty_On_Prod_order</DataField>
+        </Field>
+        <Field Name="Qty_On_Prod_orderFormat">
+          <DataField>Qty_On_Prod_orderFormat</DataField>
+        </Field>
+        <Field Name="GSM">
+          <DataField>GSM</DataField>
+        </Field>
+        <Field Name="GSMFormat">
+          <DataField>GSMFormat</DataField>
+        </Field>
+        <Field Name="Deckle_Size">
+          <DataField>Deckle_Size</DataField>
+        </Field>
+        <Field Name="Deckle_SizeFormat">
+          <DataField>Deckle_SizeFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
